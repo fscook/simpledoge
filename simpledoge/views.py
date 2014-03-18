@@ -298,7 +298,7 @@ def user_dashboard(address=None):
 def address_clear(address=None):
     if len(address) != 34:
         abort(404)
-    
+
     # remove address from the recently viewed
     recent = session.get('recent_users', [])
     if address in recent:

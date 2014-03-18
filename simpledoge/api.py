@@ -3,7 +3,7 @@ from lever import (API, LeverException)
 from pprint import pformat
 
 from .models import (Block, Share, Transaction, Payout, OneMinuteShare, Status,
-                     Blob)
+                     Blob, Threshold)
 from . import db
 
 import six
@@ -93,6 +93,11 @@ class BlobAPI(APIBase):
     model = Blob
 
 
+class ThresholdAPI(APIBase):
+    model = Threshold
+
+
+ThresholdAPI.register(api, '/threshold')
 BlobAPI.register(api, '/blob')
 BlockAPI.register(api, '/block')
 PayoutAPI.register(api, '/payout')

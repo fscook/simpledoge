@@ -1,9 +1,7 @@
 import calendar
 import logging
 import json
-import smtplib
 
-from email.mime.text import MIMEText
 from flask import current_app
 from collections import namedtuple
 from datetime import datetime, timedelta
@@ -14,6 +12,7 @@ from sqlalchemy.dialects.postgresql import HSTORE, ARRAY
 from cryptokit import bits_to_difficulty
 
 from . import db
+from .util import send_mail
 
 
 class Blob(base):
@@ -185,7 +184,7 @@ class Threshold(base):
     green_notif = db.Column(db.Boolean, default=True)
     emails = db.Column(ARRAY(db.String))
 
-    def report_condition(self, message, typ, new_state):
+    def report_condition(self, subject, typ, new_state):
         db.session.refresh(self, lockmode='update')
         # we got beat in a race condition...
         if getattr(self, typ) == new_state:
@@ -198,53 +197,30 @@ class Threshold(base):
         if new_state and not self.green_notif:
             return
         current_app.logger.info("Reporting '{}' for worker {}; addr: {}"
-                                .format(message, self.worker, self.user))
+                                .format(subject, self.worker, self.user))
 
         # get all the events that happened for these addresses in the last hour
         hour_ago = datetime.utcnow() - timedelta(hours=1)
         events = (Event.query.filter_by(worker=self.worker, user=self.user).
                   filter(Event.address.in_(self.emails)).
                   filter(Event.time >= hour_ago).all())
+        # find out who can actually recieve
+        email_limit = current_app.config.get('emails_per_hour_cap', 6)
+        recip = []
+        for addr in self.emails:
+            count = len([e for e in events if e.address == addr])
+            if count > email_limit:
+                current_app.logger.info(
+                    "Not sending email to {} because over limit"
+                    .format(addr, email_limit))
+            else:
+                recip.append(addr)
 
-        try:
-            econf = current_app.config['email']
-            send_addr = econf['send_address']
-            host = smtplib.SMTP(
-                host=econf['server'],
-                port=econf['port'],
-                local_hostname=econf['ehlo'],
-                timeout=econf['timeout'])
-            host.set_debuglevel(econf['debug'])
-            if econf['tls']:
-                host.starttls()
-            if econf['ehlo']:
-                host.ehlo()
-
-            host.login(econf['username'], econf['password'])
-            email_limit = current_app.config.get('emails_per_hour_cap', 6)
-            # Send the message via our own SMTP server, but don't include the
-            # envelope header.
-            for address in self.emails:
-                count = len([a for a in events if a.address == address])
-                if count <= email_limit:
-                    msg = MIMEText('http://simpledoge.com/{}'.format(self.user))
-                    msg['Subject'] = message
-                    msg['From'] = 'Simple Doge <simpledogepool@gmail.com>'
-                    msg['To'] = address
-                    host.sendmail(send_addr, address, msg.as_string())
-                else:
-                    current_app.logger.info(
-                        "Not sending email to {} because over limit"
-                        .format(address, email_limit))
-                ev = Event(user=self.user, worker=self.worker, address=address)
+        message = 'http://simpledoge.com/{}'.format(self.user)
+        if send_mail(recip, message, subject):
+            for addr in recip:
+                ev = Event(user=self.user, worker=self.worker, address=addr)
                 db.session.add(ev)
-        except smtplib.SMTPException:
-            current_app.logger.warn('Email unable to send', exc_info=True)
-            return False
-        else:
-            host.quit()
-
-        return True
 
 
 class Event(base):
@@ -262,6 +238,7 @@ class Payout(base):
     user = db.Column(db.String)
     shares = db.Column(db.BigInteger)
     amount = db.Column(db.BigInteger, CheckConstraint('amount>0', 'min_payout_amount'))
+    donate_amount = db.Column(db.BigInteger)
     transaction_id = db.Column(db.String, db.ForeignKey('transaction.txid'))
     transaction = db.relationship('Transaction', foreign_keys=[transaction_id])
     __table_args__ = (
