@@ -14,8 +14,9 @@ $(document).ready(function() {
     var hashrate, seconds, mhashpersec, user_shares, est_payout,
         round_reward, shares_to_solve, percentage_value, dogerate, day_shares;
 
-    round_reward = {{ round_reward }};
-    user_shares = {{ user_shares or "NaN" }};
+    round_reward = {{ config['reward'] }};
+    user_shares = {{ user_shares or 'NaN' }};
+
     {# Calculate est round payout  #}
     shares_to_solve = {{ g.current_difficulty }} * Math.pow(2, 16);
     shares_to_solve = shares_to_solve * 2;
@@ -241,7 +242,7 @@ $(document).ready(function() {
                   <tr>
                     <th colspan="8" style="text-align:left;">
                       <small>Running PPAgent v{{ stat.get('v', '0.2') }}</small>&nbsp;
-                      {% if dat['status_version'] < latest_ppagent %}
+                      {% if dat['status_version'] < config['latest_ppagent'] %}
                         {# Notice about out of date ppagent #}
                         <a href="https://github.com/icook/ppagent#upgrade">
                           <small style="color:#FFD600;font-weight:400;">
@@ -271,8 +272,8 @@ $(document).ready(function() {
   </div>
 
   <div class="row row-header">
-    <h2>Account<small class="text-muted">- Currently donating {{ perc }}%
-      <a style="color:gray;" href="/set_donation/{{ username }}"><i class="fa fa-edit" ></i></a>
+    <h2>Account<small class="text-muted">- Currently donating {{ fee_perc }}%
+      <a style="color:gray;" href="/set_fee/{{ username }}"><i class="fa fa-edit" ></i></a>
     </small></h2>
     <br>
     <div class="col-sm-3">
