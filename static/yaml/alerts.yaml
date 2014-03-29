@@ -3,6 +3,6 @@
   date: 3/27/2014
   key: 5
   body: |
-      Check out <a href="http://www.simplevert">Simple Vert</a> if you're interested
+      Check out <a href="http://www.simplevert.com">Simple Vert</a> if you're interested
       in mining vertcoin. You'll need to upgrade <a href="https://github.com/icook/ppagent#powerpool-agent">PPAgent</a> to
       work with the new pool.
