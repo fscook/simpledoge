@@ -1,3 +1,9 @@
+- title: Simple Vert launched!
+  date: 3/29/2014
+  body: |
+      Several people have asked for a Vertcoin pool, so we've now launched
+      <a href="http://www.simplevert.com">Simple Vert</a>! We have not yet made PPAgent compatible
+      with it, but expect a patch shortly.
 - title: Negative fees have ended. 0% fees here to stay.
   date: 3/26/2014
   body: |
