@@ -2,8 +2,9 @@
   date: 3/29/2014
   body: |
       Several people have asked for a Vertcoin pool, so we've now launched
-      <a href="http://www.simplevert.com">Simple Vert</a>! We have not yet made PPAgent compatible
-      with it, but expect a patch shortly.
+      <a href="http://www.simplevert.com">Simple Vert</a>! If you want to use PPAgent with
+      Simple Vert you'll need to upgrade to the newest version
+      (<a href="https://github.com/icook/ppagent/releases">0.3.5</a>).
 - title: Negative fees have ended. 0% fees here to stay.
   date: 3/26/2014
   body: |

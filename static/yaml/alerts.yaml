@@ -4,4 +4,5 @@
   key: 5
   body: |
       Check out <a href="http://www.simplevert">Simple Vert</a> if you're interested
-      in mining vertcoin.
+      in mining vertcoin. You'll need to upgrade <a href="https://github.com/icook/ppagent/releases">PPAgent</a>) to
+      work with the new pool.
