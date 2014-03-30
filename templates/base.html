@@ -185,6 +185,15 @@
             </li>
 
           </ul>
+          {# Links to other simple pools #}
+          <ul class="nav navbar-nav pull-right">
+            <li{% if active_site == "doge" %} class="active"{% endif %}>
+              <a href="http://www.simpledoge.com"><img class="too-damn-bright" src="/static/img/dogecoin.png" style="width:32px;"></a>
+            </li>
+            <li{% if active_site == "vert" %} class="active"{% endif %}>
+              <a href="http://www.simplevert.com"><img class="too-damn-bright" src="/static/img/vertcoin.png" style="width:32px;"></a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
