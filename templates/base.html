@@ -1,3 +1,4 @@
+{% set active_site = config['coin_name'] %}
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -186,12 +187,12 @@
 
           </ul>
           {# Links to other simple pools #}
-          <ul class="nav navbar-nav pull-right">
-            <li{% if active_site == "doge" %} class="active"{% endif %}>
-              <a href="http://www.simpledoge.com"><img class="too-damn-bright" src="/static/img/dogecoin.png" style="width:32px;"></a>
+          <ul class="nav navbar-nav pull-right hidden-xs">
+            <li{% if active_site == "Doge" %} class="active"{% endif %}>
+              <a href="http://www.simpledoge.com"><img class="too-damn-bright" src="/static/img/dogecoin.png" style="width:20px;"></a>
             </li>
-            <li{% if active_site == "vert" %} class="active"{% endif %}>
-              <a href="http://www.simplevert.com"><img class="too-damn-bright" src="/static/img/vertcoin.png" style="width:32px;"></a>
+            <li{% if active_site == "Vert" %} class="active"{% endif %}>
+              <a href="http://www.simplevert.com"><img class="too-damn-bright" src="/static/img/vertcoin.png" style="width:20px;"></a>
             </li>
           </ul>
         </div>
