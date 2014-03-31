@@ -1,3 +1,11 @@
+- title: <b>5 min downtime</b>
+  severity: warning
+  date: 3/30/2014
+  key: 6
+  body: |
+      Just a heads up, we had ~5 min offline(~22:28-22:33 GMT) when we hit the max file descriptor limit. We don't 
+      expect this to be a continuing issue as we've increased the descriptor limit by about 15x, but 
+      we'll continue to monitor/adjust it as necessary.
 - title: <b>Simple Vert pool launched!</b>
   severity: success
   date: 3/27/2014
