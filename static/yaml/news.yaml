@@ -1,3 +1,66 @@
+- title: Simple Doge is sending one lucky shibe to the moon!
+  date: 4/1/2014
+  body: |
+    <div style="font-size:18px;">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <img class=" hidden-xs" src="/static/img/doge-moon.png">
+        <img class="hidden-sm hidden-md hidden-lg" src="/static/img/doge-moon.png" width="275">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+      There is a lot of support for this idea in the community, and we've recieved strong backing from
+      several influential members, including
+      <a href="http://www.reddit.com/u/moolah_">moolah</a>, <a href="http://www.reddit.com/user/ummjackson">
+      ummjackson</a>, and Pronoob. With the community pitching in we could be putting one lucky shibe on the moon by the end
+      of the year according to some conservative estimates.
+      </div>
+      </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+      <blockquote>
+      "To the moon" is one of the core principles Dogecoin was built on. I think I speak for all
+      shibes when I say that we fully support this project. Except for pronoob, hes kinda a dick.<br>-Ummjackson
+      </blockquote>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+      <p>But this sort of project doesn't just happen overnight. Its a massive undertaking requiring very careful
+      planning and execution. A recent article on fox news estimates that with a newer SpaceX model
+      it could be <a href="http://www.foxnews.com/science/2014/03/19/how-to-return-to-moon-in-just-four-years/">4-10
+      years</a> before we have a good shot at putting a person on the moon. Thats not even taking into account things
+      like developing a doge sized
+      space suit, an absolute requirement on this sort of project. We find that sort of time frame to be completely
+      unacceptable, and luckily we talked to our own experts.
+    </div></div>
+    <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <blockquote>
+      They really just does't understand the code. I submitted a pull request that solved the issues, but closed it due to
+      all the negativity. Sorry for just trying to speed things up a bit<br>-Pronoob
+      </blockquote>
+    </div></div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+      <p>Some critics may claim that this isn't something that's within the budget of the doge community, and
+      clearly, funding this sort of thing isn't something a single pool can do. But generous donations coming in
+      from Moolah and others have begun coming in and we're already about 1/3 of the way there.
+    </div></div>
+    <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <blockquote>
+      While I didn't originally intend to support this project, I have accidentally made a very large contribution
+      towards its success, so we might as well make it happen.<br>-Moolah
+      </blockquote>
+    </div></div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+      Anyways, stay tuned for a news update on who the lucky winner is! We'll be posting the address tomorrow.
+    </div></div>
+    </div>
 - title: Simple Vert launched!
   date: 3/29/2014
   body: |

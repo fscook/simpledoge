@@ -1,8 +1,6 @@
-- title: <b>Simple Vert pool launched!</b>
+- title: <b>We're sending one lucky shibe to the moon!</b>
   severity: success
-  date: 3/27/2014
-  key: 5
+  date: 4/1/2014
+  key: 10
   body: |
-      Check out <a href="http://www.simplevert.com">Simple Vert</a> if you're interested
-      in mining vertcoin. You'll need to upgrade <a href="https://github.com/icook/ppagent#powerpool-agent">PPAgent</a> to
-      work with the new pool.
+    Check out the <a href="http://www.simpledoge.com/news">news article</a> for more details.
