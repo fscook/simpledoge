@@ -1,3 +1,11 @@
+- title: Stats upgrade pt.1
+  date: 4/1/2014
+  body: |
+    Worker stats have been improved. Now your workers are sorted (numerically/alphabetically).
+    Also, if you're using PPAgent you'll notice it now calculates your WU, Total Hashrate, and
+    WUE at the worker level. The WUE has a status indicator to give you an idea of the health
+    at a glance. In the next few days(pt 2) we'll be rolling out temperature and hashrate graphs
+    for ppagent stats.
 - title: Simple Doge is sending one lucky shibe to the moon!
   date: 4/1/2014
   body: |
