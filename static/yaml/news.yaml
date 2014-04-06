@@ -1,3 +1,17 @@
+- title: Invalid Auth Attack, ~15 min downtime
+  date: 4/6/2014
+  body: |
+    From ~23:35-23:50 GMT we were hit with an auth attack. The
+    attacker connected ~400 workers, spammed auth requests, and clogged one of the cores on our
+    machine. We've implemented a patch to auto ban IPs for this sort of activitiy, and have scheduled incremental
+    additions to our stratum security to try to pre-emptively stop similar sorts of attack in the future.
+    Overall though, we take this as a sign that we're doing things right! Thanks for mining with us :D
+- title: Stats upgrade pt.2
+  date: 4/5/2014
+  body: |
+    If you're using PPAgent you can now view historical graphs of temperature and actual hashrate.
+    We will be tweaking them a bit for the next while. Let us know if there's other stats you'd
+    like to see graphed!
 - title: Vardiff lives!
   date: 4/4/2014
   body: |
