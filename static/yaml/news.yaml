@@ -1,3 +1,13 @@
+- title: Recent DoS mitigation status
+  date: 4/8/2014
+  body: |
+    Thanks for sticking with us through the DoS attacks, we believe they are pretty much over at this point,
+    as we have not been attacked in over 24 hours. All told, we suffered <45 minutes of downtime, most 
+    other pools that we attacked fared much worse than ourselves.
+    As a heads up, some of the server hardening we've done includes adding some (potentially too strict) rate limiting 
+    policies for stratum clients. This has the potential to temporarily ban you. We believe it is pretty
+    well tuned, and we've given it a healthy safety margin, so you'd need to be an extremely large miner 
+    to potentially hit it. But please contact us if your miner is having trouble connecting or acting unusual.
 - title: Invalid Auth Attack, ~15 min downtime
   date: 4/6/2014
   body: |
