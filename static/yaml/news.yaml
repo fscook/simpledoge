@@ -9,6 +9,7 @@
     accepting shares at the correct difficulty(statistically its the same), it just gives you 
     rejected messages when it shouldn't. We'll be patching this (and it'll require a reboot w/ a min or 
     two of downtime), probably in the next week.
+- title: Recent DoS mitigation status
   date: 4/8/2014
   body: |
     Thanks for sticking with us through the DoS attacks, we believe they are pretty much over at this point,
